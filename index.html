@@ -15,14 +15,14 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Això fa que baixi suaument quan cliques al menú */
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Inter', sans-serif;
             color: #333;
             line-height: 1.6;
-            background-color: #FAFAFA;
+            background-color: #FAFAFA; /* Fons general gris molt suau */
         }
 
         /* --- BARRA DE NAVEGACIÓ --- */
@@ -47,7 +47,7 @@
         .logo {
             font-weight: 700;
             font-size: 1.5rem;
-            color: #3c559f; /* El color vermell de la teva marca */
+            color: #3c559f; /* Blau corporatiu */
             text-decoration: none;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -80,7 +80,7 @@
         }
 
         .btn-nav-demo:hover {
-            background-color: #3c559f;
+            background-color: #2a3e75; /* Blau una mica més fosc al passar el ratolí */
         }
 
         /* --- SECCIONS GENERALS --- */
@@ -108,7 +108,7 @@
             height: 80px;
         }
 
-        /* --- ESTILS ESPECÍFICS DE SECCIONS --- */
+        /* --- ESTILS ESPECÍFICS DE SECCIONS (TARGETES) --- */
         
         #problem {
             background-color: white;
@@ -118,12 +118,13 @@
         }
 
         #solution {
-            background-color: #f4f4f4;
+            background-color: #f4f4f4; /* Gris clar per contrastar */
             border-radius: 15px;
             margin-top: 2rem;
+            /* Opcional: li pots posar ombra també si vols, però sense queda net */
         }
 
-        /* --- SECCIÓ DEMO (El disseny antic refet amb Flexbox) --- */
+        /* --- SECCIÓ DEMO (ARA AMB ESTIL DE TARGETA) --- */
         #demo {
             display: flex;
             flex-direction: column;
@@ -131,7 +132,13 @@
             justify-content: center;
             text-align: center;
             padding: 6rem 1rem;
-            background: white;
+            
+            /* AQUESTES SÓN LES PROPIETATS NOVES PER IGUALAR-HO: */
+            background-color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            margin-bottom: 2rem; /* Una mica d'espai al final abans del footer */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
         }
 
         .demo-container {
@@ -141,14 +148,14 @@
             gap: 40px;
         }
 
-        /* RECREACIÓ DEL DISPOSITIU VERMELL (CSS Pur) */
+        /* RECREACIÓ DEL DISPOSITIU */
         .device-card {
             width: 260px;
             height: 260px;
             background-color: #E6421D;
             border-radius: 15px;
             position: relative;
-            box-shadow: 0 10px 30px rgba(230, 66, 29, 0.3);
+            box-shadow: 0 10px 30px rgba(60, 85, 159, 0.4); /* Ombra blavosa */
             overflow: hidden;
         }
 
@@ -199,7 +206,7 @@
         .start-btn {
             width: 330px; 
             height: 100px; 
-            background: #3c559f; 
+            background: #3c559f; /* Blau corporatiu */
             border-radius: 50px; 
             display: flex; 
             justify-content: center; 
@@ -207,16 +214,16 @@
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(172, 206, 238, 0.5);
+            box-shadow: 0 4px 15px rgba(60, 85, 159, 0.3);
         }
 
         .start-btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(172, 206, 238, 0.7);
+            box-shadow: 0 8px 20px rgba(60, 85, 159, 0.5);
         }
 
         .start-text {
-            color: white; 
+            color: white; /* Text Blanc */
             font-size: 24px; 
             font-weight: 500;
         }
@@ -224,7 +231,7 @@
         /* RESPONSIVE (MÒBIL) */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* En un futur pots fer un menú hamburguesa */
+                display: none;
             }
             nav {
                 justify-content: center;
