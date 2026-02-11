@@ -1,34 +1,307 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La meva Web</title>
-</head>
-<body style="margin: 0; padding: 0;">
-    <div style="width: 1412px; height: 1080px; position: relative; background: rgba(255, 255, 255, 0.05)">
-        <div style="width: 1284px; height: 1080px; left: 64px; top: 82px; position: absolute; background: white">
-            <div style="padding: 20px; left: 456.50px; top: 209.79px; position: absolute; background: white; flex-direction: column; justify-content: flex-start; align-items: center; gap: 40px; display: inline-flex">
-                
-                <div style="width: 260px; height: 260px; position: relative; background: #E6421D; overflow: hidden; border-radius: 15px">
-                    <div style="width: 249px; height: 249px; left: 5px; top: 5px; position: absolute; background: black; border-radius: 15px"></div>
-                    <div style="width: 217px; height: 172px; left: 20px; top: 38px; position: absolute; background: #F2F2F2">
-                        <div style="width: 145px; height: 63px; left: 36.50px; top: 54.21px; position: absolute; text-align: center; color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Demo <br/>E-Placement</div>
-                    </div>
-                    <div style="width: 50px; height: 25px; left: 37px; top: 220px; position: absolute; background: #D9D9D9; border-radius: 5px"></div>
-                    <div style="width: 50px; height: 25px; left: 105px; top: 220px; position: absolute; background: #D9D9D9; border-radius: 5px"></div>
-                    <div style="width: 50px; height: 25px; left: 173px; top: 220px; position: absolute; background: #D9D9D9; border-radius: 5px"></div>
-                </div>
+    <title>E-Placement</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ESTILS GENERALS (RESET) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-                <a href="pag2.html" style="text-decoration: none; cursor: pointer;"> 
-                    <div style="width: 330px; height: 106.42px; background: #ACCEEE; border-radius: 50px; display: flex; justify-content: center; align-items: center;">
-                        <div style="color: black; font-size: 24px; font-family: Inter; font-weight: 400; word-wrap: break-word">Start Demo</div>
-                    </div>
-                </a>
-                
-                <div style="width: 24px; height: 27px; left: 0px; top: 530px; position: absolute"></div>
+        html {
+            scroll-behavior: smooth; /* Això fa que baixi suaument quan cliques al menú */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #FAFAFA;
+        }
+
+        /* --- BARRA DE NAVEGACIÓ --- */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #3c559f; /* El color vermell de la teva marca */
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3c559f;
+        }
+
+        .btn-nav-demo {
+            background-color: #3c559f;
+            color: white !important;
+            padding: 0.5rem 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s !important;
+        }
+
+        .btn-nav-demo:hover {
+            background-color: #3c559f;
+        }
+
+        /* --- SECCIONS GENERALS --- */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #111;
+        }
+
+        p {
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Espai per culpa de la barra fixa */
+        .spacer {
+            height: 80px;
+        }
+
+        /* --- ESTILS ESPECÍFICS DE SECCIONS --- */
+        
+        #problem {
+            background-color: white;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        #solution {
+            background-color: #f4f4f4;
+            border-radius: 15px;
+            margin-top: 2rem;
+        }
+
+        /* --- SECCIÓ DEMO (El disseny antic refet amb Flexbox) --- */
+        #demo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 1rem;
+            background: white;
+        }
+
+        .demo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        /* RECREACIÓ DEL DISPOSITIU VERMELL (CSS Pur) */
+        .device-card {
+            width: 260px;
+            height: 260px;
+            background-color: #E6421D;
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(230, 66, 29, 0.3);
+            overflow: hidden;
+        }
+
+        .screen-black {
+            width: 249px; 
+            height: 249px; 
+            background: black; 
+            border-radius: 15px;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+        }
+
+        .screen-grey {
+            width: 217px; 
+            height: 172px; 
+            background: #F2F2F2;
+            position: absolute;
+            top: 38px; 
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .screen-text {
+            color: black; 
+            font-size: 24px; 
+            font-weight: 400; 
+            line-height: 1.2;
+        }
+
+        /* Botons petits del dispositiu */
+        .device-btn {
+            width: 50px; 
+            height: 25px; 
+            background: #D9D9D9; 
+            border-radius: 5px;
+            position: absolute;
+            bottom: 15px;
+        }
+        .btn-1 { left: 37px; }
+        .btn-2 { left: 105px; }
+        .btn-3 { left: 173px; }
+
+        /* BOTÓ START DEMO */
+        .start-btn {
+            width: 330px; 
+            height: 100px; 
+            background: #3c559f; 
+            border-radius: 50px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(172, 206, 238, 0.5);
+        }
+
+        .start-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(172, 206, 238, 0.7);
+        }
+
+        .start-text {
+            color: white; 
+            font-size: 24px; 
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE (MÒBIL) */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* En un futur pots fer un menú hamburguesa */
+            }
+            nav {
+                justify-content: center;
+            }
+            .start-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">E-Placement</a>
+            <ul class="nav-links">
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#solution">The Solution</a></li>
+                <li><a href="#demo" class="btn-nav-demo">Try Demo</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="spacer"></div>
+
+    <section id="problem">
+        <h2>What is the problem?</h2>
+        <p>
+            In various electrophysiological, diagnostic, or therapeutic tests, such as evoked potentials or repetitive transcranial magnetic stimulation, specific cranial points close to the underlying cerebral cortex must be determined. These locations are internationally standardized and follow a percentage pattern called the international 10/20 system. Since every individual has a different head size and shape, an individualized positioning calculation is required.
+        </p>
+        <p>
+            A measuring tape is commonly used to determine the different points. This operation, involving taking measurements and making calculations, is sometimes performed in stressful situations by clinical staff, such as during a night shift in an intensive care unit with a heavy workload.
+        </p>
+        <p>
+            This causes the relevant measurements and calculations to be affected by the conditions in which they are performed and, therefore, susceptible to errors. These small errors in electrode position can lead to large changes in the acquired bioelectric signal or the appropriate position for electromagnetic treatment in electrophysiological tests.
+        </p>
+    </section>
+
+    <section id="solution">
+        <h2>The Solution: EPlacement</h2>
+        <p>
+            The team has developed <strong>EPlacement</strong>, a device with an advanced cephalic point localization system, facilitating diagnosis in all neurological tests requiring electrode placement on the scalp. At a reduced cost, it allows for easy, fast, and precise placement of electrodes on the head without the need for mathematical calculations or measurement readings, thus eliminating errors associated with the conventional method.
+        </p>
+        
+        <h3 style="margin-top: 2rem; font-size: 1.5rem; margin-bottom: 1rem;">The Impact of EPlacement</h3>
+        <p>
+            Through an advanced anatomical point localization system, this device allows for quick, accurate, and simple placement, without the need for mathematical calculations or manual measurements. 
+        </p>
+        <p>
+            By reducing errors associated with the conventional method, EPlacement improves accuracy in neurological tests and ensures proper electrode placement according to the international 10/20 system. This contributes to obtaining more accurate and reliable results in the diagnosis of various neurological conditions.
+        </p>
+    </section>
+
+    <section id="demo">
+        <h2 style="margin-bottom: 3rem;">Interactive Demo</h2>
+        
+        <div class="demo-container">
+            <div class="device-card">
+                <div class="screen-black"></div>
+                <div class="screen-grey">
+                    <div class="screen-text">Demo <br/>E-Placement</div>
+                </div>
+                <div class="device-btn btn-1"></div>
+                <div class="device-btn btn-2"></div>
+                <div class="device-btn btn-3"></div>
             </div>
+
+            <a href="pag2.html" class="start-btn">
+                <div class="start-text">Start Demo</div>
+            </a>
         </div>
-    </div>
+    </section>
+
+    <footer style="text-align: center; padding: 2rem; color: #777; font-size: 0.9rem;">
+        &copy; 2026 Neurally Project. All rights reserved.
+    </footer>
+
 </body>
 </html>
