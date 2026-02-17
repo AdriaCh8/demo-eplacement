@@ -84,6 +84,7 @@ header {
 .text-instruction {
     font-size: 24px;
     font-weight: 400;
+    top:-1%;
 }
 
 /* --- DISPOSITIUS --- */
@@ -111,6 +112,10 @@ header {
     width: 100%;
     aspect-ratio: 738 / 716; 
     margin-top: 20px;
+
+    left:-6.5%;
+    top: -3%;
+    
 }
 
 .face-img {
@@ -145,8 +150,8 @@ header {
     width: 3%; 
     height: auto;
     aspect-ratio: 1/1;
-    left: 102%; /* Mòbil */
-    top: 42.1%;
+    left: 111%; /* Mòbil */
+    top: 42.3%;
     border-radius: 50%;
 }
 
