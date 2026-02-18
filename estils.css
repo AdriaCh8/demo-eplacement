@@ -41,14 +41,14 @@ header {
     position: absolute; left: 20px;
     text-decoration: none; color: white;
     background-color: #3c559f;
-    padding: 8px 15px; border-radius: 5px;
+    padding: 8px 15px; border-radius: 15px;
     font-weight: 500; font-size: 0.9rem;
 }
 
 /* --- CONTENIDOR BLANC --- */
 #main-container {
     background-color: white;
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     
     /* Mòbil per defecte */
@@ -67,7 +67,7 @@ header {
 
 /* --- TEXTOS (Classes generals) --- */
 .text-label {
-    font-family: 'Inter', sans-serif;
+    font-family: sans-serif;
     color: black;
     text-align: center;
     position: relative;
@@ -186,7 +186,7 @@ header {
     width: 100%;
     max-width: 363px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 
 /* --- ANIMACIONS --- */
