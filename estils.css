@@ -135,6 +135,24 @@ header {
     object-fit: fill; 
 }
 
+.cylon-highlight {
+    position: absolute;
+    left: 14%;       
+    width: 10%;      
+    height: 2%;
+    top: 42%;
+    object-fit: fill; 
+}
+
+.cylon-highlight-vertical {
+    position: absolute;
+    left: 44%;
+    width: 2%;
+    height: 10%;
+    top: 10%;
+    object-fit: fill; 
+}
+
 .line-v {
     position: absolute;
     top: 10%;        
@@ -195,6 +213,38 @@ header {
 @keyframes blink-ui { 0% { opacity: 0.9; } 50% { opacity: 0; } 100% { opacity: 0.9; } }
 .animacio-parpadejant { animation: blink-ui 1.5s infinite; pointer-events: none; }
 
+@keyframes moure-lateral {
+    0% { 
+        transform: translateX(0); 
+    }
+    50% { 
+        transform: translateX(390px); /* Arriba al final a la meitat del temps */ 
+    }
+    100% {
+        transform: translateX(0); /* Torna al principi per aturar-se */
+    }
+}
+
+@keyframes moure-vertical {
+    0% { 
+        transform: translateY(0); 
+    }
+    50% { 
+        transform: translateY(430px); /* Arriba al final a la meitat del temps */ 
+    }
+    100% {
+        transform: translateY(0); /* Torna al principi per aturar-se */
+    }
+}
+
+.moviment-cylon {
+    /* S'executa 1 sola vegada durant 3 segons */
+    animation: moure-lateral 4s ease-in-out 1 forwards;
+}
+
+.moviment-cylon-vertical {
+    animation: moure-vertical 4s ease-in-out 1 forwards;
+}
 
 @media (min-width: 1280px) {
     
@@ -262,6 +312,17 @@ header {
     .line-h, .stick-highlight, .click-area {
         left: 18%;  
         width: 88%; 
+    }
+
+    .cylon-highlight {
+        left: 18%;
+        width: 30%;
+    }
+
+    .cylon-highlight-vertical {
+        left: 44%;
+        width: 2%;
+        height: 20%;
     }
     
     .led-indicator {
