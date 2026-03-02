@@ -138,19 +138,21 @@ header {
 .cylon-highlight {
     position: absolute;
     left: 14%;       
-    width: 10%;      
+    width: 2%;      
     height: 2%;
     top: 42%;
     object-fit: fill; 
+    border-radius: 50%;
 }
 
 .cylon-highlight-vertical {
     position: absolute;
     left: 44%;
     width: 2%;
-    height: 10%;
+    height: 2%;
     top: 10%;
     object-fit: fill; 
+    border-radius: 50%;
 }
 
 .line-v {
@@ -218,7 +220,7 @@ header {
         transform: translateX(0); 
     }
     50% { 
-        transform: translateX(390px); /* Arriba al final a la meitat del temps */ 
+        transform: translateX(428px); /* Arriba al final a la meitat del temps */ 
     }
     100% {
         transform: translateX(0); /* Torna al principi per aturar-se */
@@ -230,7 +232,7 @@ header {
         transform: translateY(0); 
     }
     50% { 
-        transform: translateY(430px); /* Arriba al final a la meitat del temps */ 
+        transform: translateY(465px); /* Arriba al final a la meitat del temps */ 
     }
     100% {
         transform: translateY(0); /* Torna al principi per aturar-se */
@@ -239,11 +241,11 @@ header {
 
 .moviment-cylon {
     /* S'executa 1 sola vegada durant 3 segons */
-    animation: moure-lateral 4s ease-in-out 1 forwards;
+    animation: moure-lateral 10s ease-in-out 1 forwards;
 }
 
 .moviment-cylon-vertical {
-    animation: moure-vertical 4s ease-in-out 1 forwards;
+    animation: moure-vertical 10s ease-in-out 1 forwards;
 }
 
 @media (min-width: 1280px) {
@@ -303,7 +305,7 @@ header {
         width: 738px;
         height: 716px;
         left: 0px;
-        top: 382px;
+        top: 375px;
         z-index: 10;
         margin-top: 0;
     }
@@ -316,13 +318,13 @@ header {
 
     .cylon-highlight {
         left: 18%;
-        width: 30%;
+        width: 2%;
     }
 
     .cylon-highlight-vertical {
         left: 44%;
         width: 2%;
-        height: 20%;
+        height: 2%;
     }
     
     .led-indicator {
@@ -355,6 +357,32 @@ header {
     .side-image { 
         width: 363px; 
         height: auto;
+    }
+
+    @keyframes moure-lateral {
+        0% { 
+            transform: translateX(0); 
+        }
+        50% { 
+            /* Canvia el 650px pels píxels que necessitis en escriptori */
+            transform: translateX(632px); 
+        }
+        100% {
+            transform: translateX(0); 
+        }
+    }
+
+    @keyframes moure-vertical {
+        0% { 
+            transform: translateY(0); 
+        }
+        50% { 
+            /* Canvia el 700px pels píxels que necessitis en escriptori */
+            transform: translateY(692px); 
+        }
+        100% {
+            transform: translateY(0); 
+        }
     }
 }
 
