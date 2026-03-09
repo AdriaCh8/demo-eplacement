@@ -6,6 +6,7 @@
     <title>Pagina28</title>
     <link rel="stylesheet" href="estils.css">
 </head>
+
 <body>
 
     <header>
@@ -23,12 +24,12 @@
                     <div style="left: 25px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">YES</div>
                     <div style="left: 80px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">REPEAT</div>
                     <div style="left: 165px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">NO</div>
-                    <div style="width: 155px; height: 54px; left: 40px; top: 30px; position: absolute; color: black; font-size: 20px; font-weight: 400; line-height: 1.2;">Have the positions been illuminated correctly?</div>
+                    <div style="width: 155px; height: 54px; left: 40px; top: 30px; position: absolute; color: black; font-size: 20px; font-weight: 400; line-height: 1.2;">Have the leds lit up correctly?</div>
                 </div>
 
                 <a href="pag29.html" style="width: 50px; height: 25px; left: 37px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
 
-                <a href="pag25.html" style="width: 50px; height: 25px; left: 105px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
+                <a href="pag27.html" style="width: 50px; height: 25px; left: 105px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
                 
                 <a id="btn-no" href="#" style="width: 50px; height: 25px; left: 172px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
              </div>    
@@ -36,8 +37,10 @@
 
         <div class="face-wrapper">
             <img class="face-img" src="imatges/cara.png" alt="Cara" />
-            <img class="line-h" src="imatges/tira1-pag7.png" alt="Linia H" />
+            <img class="line-h" src="imatges/tira1-pag2.png" alt="Linia H" />
             <img class="line-v" src="imatges/tira2-pag2.png" alt="Linia V" />
+
+            <img class="cylon-highlight-vertical moviment-cylon-vertical" src="imatges/CylonBlau.png" alt="Animacio destacar" />
         </div>
 
         <div class="side-images-group">
@@ -60,7 +63,7 @@
     btnNo.addEventListener('click', function(e) {
         e.preventDefault(); // Evita que salti a dalt de la pàgina
         localStorage.setItem('errorLeds', 'cert'); // Guardem la decisió
-        window.location.href = 'pag29.html'; // Saltem a la pàgina 29
+        window.location.href = 'pag25.html'; // Saltem a la pàgina 25
     });
     </script>
 

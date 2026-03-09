@@ -124,6 +124,15 @@ header {
     object-fit: contain;
 }
 
+.coil-img {
+    position: absolute;
+    width: 50%;
+    height: auto;
+    left: 30%;
+    top: 38%;
+    object-fit: contain;
+}
+
 /* --- LÍNIES I ELEMENTS SOBRE LA CARA --- */
 /* Configuració MÒBIL per defecte */
 .line-h, .stick-highlight {
@@ -206,6 +215,7 @@ header {
     width: 100%;
     max-width: 363px;
     height: auto;
+    border-radius: 15px;
 }
 
 /* --- ANIMACIONS --- */

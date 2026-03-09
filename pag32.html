@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagina32</title>
     <link rel="stylesheet" href="estils.css">
 </head>
+
 <body>
 
     <header>
@@ -18,63 +20,70 @@
         <div class="device-wrapper">
             <div class="device-box">
                 <div style="width: 249px; height: 249px; background: black; border-radius: 15px"></div>
-                
-                <div style="width: 216px; height: 171px; left: 20px; top: 38px; position: absolute; background: #F2F2F2">
-                    <div style="left: 25px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">YES</div>
-                    <div style="left: 80px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">REPEAT</div>
-                    <div style="left: 165px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">NO</div>
-                    <div style="width: 155px; height: 54px; left: 40px; top: 30px; position: absolute; color: black; font-size: 20px; font-weight: 400; line-height: 1.2;">Have the positions been illuminated correctly?</div>
+
+                <div
+                    style="width: 216px; height: 171px; left: 20px; top: 38px; position: absolute; background: #F2F2F2">
+                    <div
+                        style="left: 25px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">
+                        YES</div>
+                    <div
+                        style="left: 80px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">
+                        REPEAT</div>
+                    <div
+                        style="left: 165px; top: 145px; position: absolute; color: black; font-size: 16px; font-weight: 400;">
+                        NO</div>
+                    <div
+                        style="width: 155px; height: 54px; left: 40px; top: 30px; position: absolute; color: black; font-size: 20px; font-weight: 400; line-height: 1.2;">
+                        Have the positions been illuminated correctly?</div>
                 </div>
 
-                <a id="btn-yes" href="pag33.html" style="width: 50px; height: 25px; left: 37px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
+                <a href="pag33.html"
+                    style="width: 50px; height: 25px; left: 37px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
 
-                <a href="pag29.html" style="width: 50px; height: 25px; left: 105px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
-                
-                <a href="pag33.html" style="width: 50px; height: 25px; left: 172px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
-             </div>    
+                <a href="pag29.html"
+                    style="width: 50px; height: 25px; left: 105px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
+
+                <a id="btn-no" href="#"
+                    style="width: 50px; height: 25px; left: 172px; top: 219px; position: absolute; background: #D9D9D9; border-radius: 5px; cursor: pointer;"></a>
+            </div>
         </div>
 
         <div class="face-wrapper">
             <img class="face-img" src="imatges/cara.png" alt="Cara" />
-            <img class="line-h" src="imatges/tira1-pag2.png" alt="Linia H" />
-            <img class="line-v" src="imatges/tira2-pag10.png" alt="Linia V" />
+            <img class="line-h" src="imatges/tira1-pag7.png" alt="Linia H" />
+            <img class="line-v" src="imatges/tira2-pag2.png" alt="Linia V" />
         </div>
 
         <div class="side-images-group">
+
             <div class="side-image-wrapper side-img-pos-1">
                 <img class="side-image" src="imatges/imatge1-pag5.png" alt="Imatge Lateral 1" />
             </div>
+
             <div class="side-image-wrapper side-img-pos-2">
                 <img class="side-image" src="imatges/imatge2-pag5.png" alt="Imatge Lateral 2" />
             </div>
+
         </div>
 
     </div>
 
     <script>
-        const btnYes = document.getElementById('btn-yes');
+        const btnNo = document.getElementById('btn-no');
 
-
-        // Lógica del botón YES
-        btnYes.addEventListener('click', function(e) {
-            e.preventDefault(); // Evitamos que vaya a pag33.html directamente
-
-            const condicion = localStorage.getItem('errorLeds');
-
-            if (condicion === 'cert') {
-                localStorage.removeItem('errorLeds'); // Borramos el dato para resetearlo
-                window.location.href = 'pag33.html'; // Si es cierto, vamos a pag33.html
-            } else {
-                window.location.href = 'pag4.html'; // Si no es cierto, ruta normal
-            }
+        btnNo.addEventListener('click', function (e) {
+            e.preventDefault(); // Evita que salti a dalt de la pàgina
+            localStorage.setItem('errorLeds', 'cert'); // Guardem la decisió
+            window.location.href = 'pag33.html'; // Saltem a la pàgina 33
         });
     </script>
 
     <script>
-    window.addEventListener('load', function() {
-        window.scrollTo(0, 120); 
-    });
+        window.addEventListener('load', function () {
+            window.scrollTo(0, 120);
+        });
     </script>
 
 </body>
+
 </html>
